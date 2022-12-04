@@ -1,6 +1,11 @@
-.flight-card {
+.flights-grid {
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-rows: auto;
     justify-content: space-between;
+}
+
+.flight-row {
+    display: contents;
 }

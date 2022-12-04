@@ -1,8 +1,15 @@
 <%= render 'search_bar' %>
-<% @flights.each do |flight| %>
-  <div class="flight-card">
-    <div class="departure-airport-item"><%= flight.departure_airport.code %></div>
-    <div class="arrival-airport-item"><%= flight.arrival_airport.code %></div>
-    <div class="departure-date-item"><%= flight.depart_datetime %></div>
-  </div>
-<% end %>
+<div class="flights-grid">
+  <% if @flights.any? %>
+    <% @flights.each do |flight| %>
+      <div class="flight-row">
+        <div class="departure-airport-item"><%= flight.departure_airport.code %></div>
+        <div class="arrival-airport-item"><%= flight.arrival_airport.code %></div>
+        <div class="departure-date-item"><%= flight.depart_datetime %></div>
+        <div class="duration-item"><%= "#{flight.duration_minutes / 60}h #{flight.duration_minutes % 60}m" %></div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No flights found.</p>
+  <% end %>
+</div>
