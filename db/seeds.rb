@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 if Rails.env == 'development'
-  Airport.delete_all
   Flight.delete_all
+  Airport.delete_all
 
   Airport.create(code: 'CVG')
   Airport.create(code: 'ATL')
@@ -40,7 +40,7 @@ if Rails.env == 'development'
   Airport.create(code: 'BNA')
   Airport.create(code: 'IAD')
 
-  1000.times do
+  10_000.times do
     flight = Flight.new
     flight.departure_airport = Airport.order('RANDOM()').first # RAND is DB specific & subject to change
     flight.arrival_airport = Airport.where.not(code: flight.departure_airport.code).order('RANDOM()').first
