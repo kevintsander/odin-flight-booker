@@ -1,6 +1,12 @@
 <%= render 'search_bar' %>
 <div class="flights-grid">
   <% if @flights.any? %>
+    <div class="flight-row">
+      <p>Departure Airport</p>
+      <p>Arrival Airport</p>
+      <p>Depature Date</p>
+      <p>Duration</p>
+    </div>
     <% @flights.each do |flight| %>
       <div class="flight-row">
         <div class="departure-airport-item"><%= flight.departure_airport.code %></div>
