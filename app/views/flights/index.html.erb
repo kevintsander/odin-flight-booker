@@ -1,24 +1,26 @@
-<%= render 'search_bar' %>
-<div class="flights-container">
-  <div class="flights-grid">
-    <% if @flights.any? %>
-      <div class="flight-row">
-        <p>Departure Airport</p>
-        <p>Arrival Airport</p>
-        <p>Depature Date</p>
-        <p>Duration</p>
-      </div>
-      <% @flights.each do |flight| %>
+<main class="flights">
+  <%= render 'search_bar' %>
+  <div class="flights-container">
+    <div class="flights-grid">
+      <% if @flights.any? %>
         <div class="flight-row">
-          <div class="departure-airport-item"><%= flight.departure_airport.code %></div>
-          <div class="arrival-airport-item"><%= flight.arrival_airport.code %></div>
-          <div class="departure-date-item"><%= flight.depart_datetime %></div>
-          <div class="duration-item"><%= "#{flight.duration_minutes / 60}h #{flight.duration_minutes % 60}m" %></div>
+          <p>Departure Airport</p>
+          <p>Arrival Airport</p>
+          <p>Depature Date</p>
+          <p>Duration</p>
         </div>
+        <% @flights.each do |flight| %>
+          <div class="flight-row">
+            <div class="departure-airport-item"><%= flight.departure_airport.code %></div>
+            <div class="arrival-airport-item"><%= flight.arrival_airport.code %></div>
+            <div class="departure-date-item"><%= flight.depart_datetime %></div>
+            <div class="duration-item"><%= "#{flight.duration_minutes / 60}h #{flight.duration_minutes % 60}m" %></div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No flights found.</p>
       <% end %>
-    <% else %>
-      <p>No flights found.</p>
-    <% end %>
+    </div>
+    <%= paginate @flights %>
   </div>
-  <%= paginate @flights %>
-</div>
+  <main>
