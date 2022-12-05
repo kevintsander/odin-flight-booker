@@ -17,4 +17,8 @@ $search-bar-background-color: hsla(255, 83%, 82%, 1);
         border-radius: 0.4rem;
         box-shadow: 1px 2px 5px 0px hsla(0, 0%, 0%, 0.15) inset;
     }
+
+    input[type="submit"] {
+        padding: 0.4rem;
+    }
 }

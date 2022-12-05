@@ -1,9 +1,9 @@
 <%= form_with url: '/flights/', method: :get, class: 'search-bar' do |search_form| %>
   <%= search_form.label :departure_airport_id, 'Departure Airport:'%>
-  <%= search_form.collection_select :departure_airport_id, Airport.order(:code), :id, :code, selected: params[:departure_airport_id] %>
+  <%= search_form.collection_select :departure_airport_id, Airport.order(:code), :id, :code, selected: params[:departure_airport_id], include_blank: true %>
   <%= search_form.label :arrival_airport_id, 'Arrival Airport:'%>
-  <%= search_form.collection_select :arrival_airport_id, Airport.order(:code), :id, :code, selected: params[:arrival_airport_id] %>
+  <%= search_form.collection_select :arrival_airport_id, Airport.order(:code), :id, :code, selected: params[:arrival_airport_id], include_blank: true %>
   <%= search_form.label :depart_date, 'Departure Date:' %>
-  <%= search_form.date_select :depart_date, selected: SharedMethods.date_from_param_parts(params, 'depart_date') %>
+  <%= search_form.date_select :depart_date, selected: SharedMethods.date_from_param_parts(params, 'depart_date'), include_blank: true %>
   <%= search_form.submit "Search Flights" %>
 <% end %>
