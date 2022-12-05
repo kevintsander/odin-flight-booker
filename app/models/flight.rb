@@ -7,7 +7,7 @@ class Flight < ApplicationRecord
     if search
       result = result.where(departure_airport_id: search[:departure_airport_id]) if search[:departure_airport_id]
       result = result.where(arrival_airport_id: search[:arrival_airport_id]) if search[:arrival_airport_id]
-      # result = result.where(depart_datetime: search[depart_date]) if search[depart_date]
+      result = result.where('date(depart_datetime) = ?', search[:depart_date]) if search[:depart_date]
     end
     result.order(:depart_datetime)
   end

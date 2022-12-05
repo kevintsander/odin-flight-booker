@@ -3,5 +3,7 @@
   <%= search_form.collection_select :departure_airport_id, Airport.order(:code), :id, :code, selected: params[:departure_airport_id] %>
   <%= search_form.label :arrival_airport_id, 'Arrival Airport:'%>
   <%= search_form.collection_select :arrival_airport_id, Airport.order(:code), :id, :code, selected: params[:arrival_airport_id] %>
+  <%= search_form.label :depart_date, 'Departure Date:' %>
+  <%= search_form.date_select :depart_date %>
   <%= search_form.submit "Search Flights" %>
 <% end %>

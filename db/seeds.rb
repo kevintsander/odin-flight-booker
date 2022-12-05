@@ -40,12 +40,15 @@ if Rails.env == 'development'
   Airport.create(code: 'BNA')
   Airport.create(code: 'IAD')
 
-  10_000.times do
+  100_000.times do
     flight = Flight.new
     flight.departure_airport = Airport.order('RANDOM()').first # RAND is DB specific & subject to change
     flight.arrival_airport = Airport.where.not(code: flight.departure_airport.code).order('RANDOM()').first
     flight.duration_minutes = rand(90..700)
-    flight.depart_datetime = rand(DateTime.now..(DateTime.now + 30))
+    start_date = Time.now
+    day_range = 60
+    end_date = start_date + ((60 * 60 * 24) * day_range)
+    flight.depart_datetime = DateTime.parse(Time.at((end_date.to_f - start_date.to_f) * rand + start_date.to_f).to_s) # rand(DateTime.now..(DateTime.now + 30))
     flight.save
   end
 end
