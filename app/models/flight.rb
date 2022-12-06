@@ -2,6 +2,10 @@ class Flight < ApplicationRecord
   belongs_to :departure_airport, class_name: 'Airport'
   belongs_to :arrival_airport, class_name: 'Airport'
 
+  def arrive_datetime
+    depart_datetime + duration_minutes.minutes
+  end
+
   def self.search(search)
     result = Flight.all
     if search

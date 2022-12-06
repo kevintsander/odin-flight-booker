@@ -1,0 +1,14 @@
+<div class="flight-card">
+  <div class="flight-card-stop" id="flight-card-departure" aria-label="departure">
+    <p class="flight-card-airport"><%= flight.departure_airport.code %></p>
+    <p class="flight-card-time"><%= flight.depart_datetime %></p>
+  </div>
+  <div class="flight-card-mid">
+    <p class="flight-card-arrow" aria-hidden="true">→</p>
+    <p class="flight-card-duration" aria-label="duration"><%= "#{flight.duration_minutes / 60}h #{flight.duration_minutes % 60}m" %></p>
+  </div>
+  <div class="flight-card-stop" id="flight-card-arrival" aria-label="arrival">
+    <p class="flight-card-airport"><%= flight.arrival_airport.code %></p>
+    <p class="flight-card-time"><%= flight.arrive_datetime %></p>
+  </div>
+</div>
