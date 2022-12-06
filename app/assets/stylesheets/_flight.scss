@@ -25,3 +25,29 @@
 .flight-row {
     display: contents;
 }
+
+.pagination {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: $secondary-color-med;
+
+    a {
+        padding: 0.3rem;
+        color: $tertiary-color-dark;
+        transition: background-color 0.2s linear;
+        border-radius: $border-radius-sm;
+
+        &:visited {
+            color: $tertiary-color-dark;
+        }
+
+        &:hover {
+            background-color: $main-color-med;
+            text-decoration: none;
+        }
+    }
+
+}

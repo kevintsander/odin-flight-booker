@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('Nunito-VariableFont_wght.ttf'),
+        url('Nunito-Italic-VariableFont_wght.ttf');
+}
+
+:root {
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}

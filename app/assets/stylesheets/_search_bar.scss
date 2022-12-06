@@ -1,5 +1,3 @@
-$search-bar-background-color: hsla(255, 83%, 82%, 1);
-
 .search-bar {
     width: 100%;
     padding: 0.5rem 1rem;
@@ -9,12 +7,12 @@ $search-bar-background-color: hsla(255, 83%, 82%, 1);
     justify-content: center;
     gap: 1rem;
 
-    background-color: $search-bar-background-color;
+    background-color: $secondary-color-med;
 
     select {
         padding: 0.4rem;
         border: none;
-        border-radius: 0.4rem;
+        border-radius: $border-radius-sm;
         box-shadow: 1px 2px 5px 0px hsla(0, 0%, 0%, 0.15) inset;
     }
 
