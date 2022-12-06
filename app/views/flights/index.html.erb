@@ -1,15 +1,19 @@
 <main class="flights">
   <%= render 'search_bar' %>
   <div class="flights-container">
-    <div class="flight-cards">
-      <% if @flights.any? %>
+    <% if @flights.any? %>
+      <%= form_with url:'flights_path', method: "get", class: "flight-cards" do |form| %>
         <% @flights.each do |flight| %>
-          <%= render 'flight_card', flight: flight%>
+          <%= render 'flight_card', flight: flight, form: form %>
         <% end %>
-      <% else %>
-        <p>No flights found.</p>
+        <% if params[:number_of_passengers] %>
+          <%= form.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
+        <% end %>
+        <%= form.submit "Select Flight" %>
       <% end %>
-    </div>
+    <% else %>
+      <p>No flights found.</p>
+    <% end %>
     <%= paginate @flights %>
   </div>
   <main>
