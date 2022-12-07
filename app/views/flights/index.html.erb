@@ -2,7 +2,7 @@
   <%= render 'search_bar' %>
   <div class="flights-container">
     <% if @flights.any? %>
-      <%= form_with url:'flights_path', method: "get", class: "flight-cards" do |form| %>
+      <%= form_with url: new_booking_path, method: 'get', class: "flight-cards" do |form| %>
         <% @flights.each do |flight| %>
           <%= render 'flight_card', flight: flight, form: form %>
         <% end %>
@@ -16,4 +16,4 @@
     <% end %>
     <%= paginate @flights %>
   </div>
-  <main>
+</main>
