@@ -1,4 +1,5 @@
 <main class="new-booking">
+  <%= render 'shared/flash' %>
   <%= form_with model: @booking do |f_booking| %>
     <%= f_booking.fields_for :passengers do |f_passenger| %>
       <p><%= "Passenger #{f_passenger.index + 1}" %></p>

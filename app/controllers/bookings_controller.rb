@@ -8,13 +8,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    puts @booking.passengers.size
     if @booking.save
       flash.notice = 'Flight booked! Check e-mail for confirmation.'
       redirect_to root_path
     else
-      puts @booking.errors.to_hash
-      flash.alert = 'Flight could not be booked!'
+      flash.now.alert = "Flight could not be booked!<br> - #{@booking.errors.full_messages.uniq.join('<br> - ')}"
       render :new, status: :unprocessable_entity
     end
   end

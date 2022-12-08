@@ -6,6 +6,6 @@
   <%= search_form.label :depart_date, 'Departure Date:' %>
   <%= search_form.date_select :depart_date, selected: SharedMethods.date_from_param_parts(params, 'depart_date'), include_blank: true %>
   <%= search_form.label :number_of_passengers, 'Passenger(s):' %>
-  <%= search_form.select :number_of_passengers, (1..20) %>
+  <%= search_form.select :number_of_passengers, (1..20), selected: params[:number_of_passengers] %>
   <%= search_form.submit "Search Flights" %>
 <% end %>

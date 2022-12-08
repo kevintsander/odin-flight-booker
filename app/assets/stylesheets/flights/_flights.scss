@@ -6,7 +6,7 @@
 }
 
 .flights-container {
-    padding: 1rem;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -28,6 +28,7 @@
     border: 1px solid $main-color-med;
     border-radius: $border-radius-sm;
     background-color: $main-color-light;
+    opacity: 0.9;
 
     &:hover {
         background-color: $main-color-med;
@@ -85,4 +86,11 @@
         }
     }
 
+}
+
+.no-flights-message {
+    @extend .card;
+    margin: 1rem auto;
+    border-color: $gray-med;
+    background-color: $gray-light;
 }

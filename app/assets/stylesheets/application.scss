@@ -12,8 +12,9 @@
  *
  */
 
- @import "vars";
- @import "general";
- @import "header";
- @import "search_bar";
- @import "flight";
+ @import "shared/vars";
+ @import "shared/general";
+ @import "shared/flash";
+ @import "shared/header";
+ @import "flights/search_bar";
+ @import "flights/flights";
