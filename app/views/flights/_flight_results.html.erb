@@ -2,10 +2,10 @@
   <div class="flights-container">
     <%= form_with url: new_booking_path, method: 'get', class: "flight-cards" do |form| %>
       <%= render partial: 'flight_card', collection: @flights, as: :flight, locals: {form: form} %>
-      <% if params[:number_of_passengers] %>
-        <%= form.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
+      <% if params[:search][:number_of_passengers] %>
+        <%= form.hidden_field :number_of_passengers, value: params[:search][:number_of_passengers] %>
       <% end %>
-      <%= form.submit "Select Flight" %>
+      <%= form.submit "Select Flight", class: 'std-button' %>
     <% end %>
     <%= paginate @flights %>
   </div>

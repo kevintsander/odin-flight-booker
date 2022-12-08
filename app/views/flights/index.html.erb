@@ -1,5 +1,5 @@
 <main class="flights">
   <%= render 'search_bar' %>
   <%= render 'shared/flash' %>
-  <%= render 'flights' %>
+  <%= render 'flight_results' if params[:search] %>
 </main>

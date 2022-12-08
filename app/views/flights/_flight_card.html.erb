@@ -1,5 +1,5 @@
 <div class="flight-card">
-  <%= form.radio_button :flight_id, flight.id %>
+  <%= form.radio_button :flight_id, flight.id, required: true %>
   <div class="flight-card-stop" id="flight-card-departure" aria-label="departure">
     <p class="flight-card-airport"><%= flight.departure_airport.code %></p>
     <p class="flight-card-time"><%= flight.depart_datetime %></p>

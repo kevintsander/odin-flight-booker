@@ -1,11 +1,11 @@
 <%= form_with url: '/flights/', method: :get, class: 'search-bar' do |search_form| %>
-  <%= search_form.label :departure_airport_id, 'Departure Airport:'%>
-  <%= search_form.collection_select :departure_airport_id, Airport.order(:code), :id, :code, selected: params[:departure_airport_id], include_blank: true %>
-  <%= search_form.label :arrival_airport_id, 'Arrival Airport:'%>
-  <%= search_form.collection_select :arrival_airport_id, Airport.order(:code), :id, :code, selected: params[:arrival_airport_id], include_blank: true %>
-  <%= search_form.label :depart_date, 'Departure Date:' %>
-  <%= search_form.date_select :depart_date, selected: SharedMethods.date_from_param_parts(params, 'depart_date'), include_blank: true %>
-  <%= search_form.label :number_of_passengers, 'Passenger(s):' %>
-  <%= search_form.select :number_of_passengers, (1..20), selected: params[:number_of_passengers] %>
-  <%= search_form.submit "Search Flights" %>
+  <%= search_form.label 'search[departure_airport_id]', 'Departure Airport:'%>
+  <%= search_form.collection_select 'search[departure_airport_id]', Airport.order(:code), :id, :code, {selected: @search[:departure_airport_id], include_blank: true}, {required: true} %>
+  <%= search_form.label 'search[arrival_airport_id]', 'Arrival Airport:'%>
+  <%= search_form.collection_select 'search[arrival_airport_id]', Airport.order(:code), :id, :code, {selected: @search[:arrival_airport_id], include_blank: true}, {required: true} %>
+  <%= search_form.label 'search[depart_date]', 'Departure Date:' %>
+  <%= search_form.date_select 'search[depart_date]', selected: SharedMethods.date_from_parts(@search[:depart_date]), include_blank: true %>
+  <%= search_form.label 'search[number_of_passengers]', 'Passenger(s):' %>
+  <%= search_form.select 'search[number_of_passengers]', (1..20), selected: @search[:number_of_passengers] %>
+  <%= search_form.submit "Search Flights", class: 'std-button' %>
 <% end %>

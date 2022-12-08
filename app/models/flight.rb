@@ -9,11 +9,13 @@ class Flight < ApplicationRecord
   end
 
   def self.search(search)
+    return Flight.none unless search
+
     result = Flight.all
-    if search
-      result = result.where(departure_airport_id: search[:departure_airport_id]) if search[:departure_airport_id]
-      result = result.where(arrival_airport_id: search[:arrival_airport_id]) if search[:arrival_airport_id]
-      result = result.where('date(depart_datetime) = ?', search[:depart_date]) if search[:depart_date]
+    result = result.where(departure_airport_id: search[:departure_airport_id]) if search[:departure_airport_id]
+    result = result.where(arrival_airport_id: search[:arrival_airport_id]) if search[:arrival_airport_id]
+    if search[:depart_date].values.compact_blank.any?
+      result = result.where('date(depart_datetime) = ?', SharedMethods.date_from_parts(search[:depart_date]))
     end
     result.order(:depart_datetime)
   end
