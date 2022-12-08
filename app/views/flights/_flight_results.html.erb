@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_import_module_tag 'flight_results' %>
+<% end%>
+
 <% if @flights.any? %>
   <div class="flights-container">
     <%= form_with url: new_booking_path, method: 'get', class: "flight-cards" do |form| %>
