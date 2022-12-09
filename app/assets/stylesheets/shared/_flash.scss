@@ -5,14 +5,12 @@
     margin: 1rem;
 
     .flash-general {
-        @extend .card;
         margin: 0;
         border-color: $gray-med;
         background-color: $gray-light;
     }
 
     .flash-alert {
-        @extend .card;
         margin: 0;
         border-color: $alert-color-med;
         background-color: $alert-color-light;

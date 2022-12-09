@@ -1,14 +1,5 @@
 <main class="new-booking">
   <%= render 'shared/flash' %>
-  <%= form_with model: @booking do |f_booking| %>
-    <%= f_booking.fields_for :passengers do |f_passenger| %>
-      <p><%= "Passenger #{f_passenger.index + 1}" %></p>
-      <%= f_passenger.label :name %>
-      <%= f_passenger.text_field :name %>
-      <%= f_passenger.label :email %>
-      <%= f_passenger.email_field :email %>
-    <% end %>
-    <%= f_booking.hidden_field :flight_id, value: @booking.flight.id %>
-    <%= f_booking.submit %>
-  <% end %>
+  <%= render 'flights/flight_card', flight: @flight, form: nil %>
+  <%= render 'booking_form', booking: @booking %>
 </main>

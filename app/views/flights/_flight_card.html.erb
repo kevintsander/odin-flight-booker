@@ -1,7 +1,9 @@
-<div class="flight-card">
-  <%= form.radio_button :flight_id, flight.id, required: true %>
+<div class="flight-card content-card">
+  <% if form %>
+    <%= form.radio_button :flight_id, flight.id, required: true %>
+  <% end %>
   <div class="flight-card-stop" id="flight-card-departure" aria-label="departure">
-    <p class="flight-card-airport"><%= flight.departure_airport.code %></p>
+    <h2 class="flight-card-airport"><%= flight.departure_airport.code %></h2>
     <p class="flight-card-time"><%= flight.depart_datetime %></p>
   </div>
   <div class="flight-card-mid">
@@ -9,7 +11,7 @@
     <p class="flight-card-duration" aria-label="duration"><%= "#{flight.duration_minutes / 60}h #{flight.duration_minutes % 60}m" %></p>
   </div>
   <div class="flight-card-stop" id="flight-card-arrival" aria-label="arrival">
-    <p class="flight-card-airport"><%= flight.arrival_airport.code %></p>
+    <h2 class="flight-card-airport"><%= flight.arrival_airport.code %></h2>
     <p class="flight-card-time"><%= flight.arrive_datetime %></p>
   </div>
 </div>

@@ -36,6 +36,16 @@ body {
         }
 }
 
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 .std-button {
     padding: 0.4rem;
     border-radius: $border-radius-sm;
@@ -50,10 +60,32 @@ body {
     }
 }
 
-.card {
+.message-card {
     width: calc(max(50%, 400px));
     text-align: center;
     border-radius: $border-radius-sm;
     border-style: solid;
     border-width: 1px;
+}
+
+.content-card {
+    border-radius: $border-radius-sm;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 1px 2px 5px 0px hsla(0, 0%, 0%, 0.15);
+    opacity: 0.9;
+}
+
+.content-card-secondary {
+    @extend .content-card;
+    border: 1px solid $secondary-color-med;
+    background-color: $secondary-color-light;
+}
+
+.horizontal-fields {
+    display: flex;
+
+    input {
+        margin: 0 4rem 0 0.8rem;
+    }
 }
