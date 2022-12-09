@@ -11,11 +11,15 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     if @booking.save
       flash.notice = 'Flight booked! Check e-mail for confirmation.'
-      redirect_to root_path
+      redirect_to booking_path(@booking)
     else
       flash.now.alert = "Flight could not be booked!<br> - #{@booking.errors.full_messages.uniq.join('<br> - ')}"
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private

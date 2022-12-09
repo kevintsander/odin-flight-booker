@@ -85,7 +85,12 @@ h2 {
 .horizontal-fields {
     display: flex;
 
-    input {
+    label, .label {
+        font-weight: 600;
+        margin: 0;
+    }
+
+    input, .input-value {
         margin: 0 4rem 0 0.8rem;
     }
 }

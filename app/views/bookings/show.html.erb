@@ -1,0 +1,5 @@
+<main class="show-booking">
+  <%= render 'shared/flash' %>
+  <%= render 'flights/flight_card', flight: @booking.flight, form: nil %>
+  <%= render 'booking', booking: @booking %>
+</main>
