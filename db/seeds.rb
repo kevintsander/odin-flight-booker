@@ -45,7 +45,7 @@ if Rails.env == 'development'
     flight.departure_airport = Airport.order('RANDOM()').first # RAND is DB specific & subject to change
     flight.arrival_airport = Airport.where.not(code: flight.departure_airport.code).order('RANDOM()').first
     flight.duration_minutes = rand(90..700)
-    start_date = '2023-01-01'
+    start_date = Time.parse('2023-01-01')
     day_range = 30
     end_date = start_date + ((60 * 60 * 24) * day_range)
     flight.depart_datetime = DateTime.parse(Time.at((end_date.to_f - start_date.to_f) * rand + start_date.to_f).to_s) # rand(DateTime.now..(DateTime.now + 30))
