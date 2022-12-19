@@ -19,4 +19,12 @@ class Flight < ApplicationRecord
     end
     result.order(:depart_datetime)
   end
+
+  def self.display_date(datetime)
+    datetime.strftime('%B %e, %Y')
+  end
+
+  def self.display_time(datetime)
+    datetime.strftime('%l:%M %p')
+  end
 end

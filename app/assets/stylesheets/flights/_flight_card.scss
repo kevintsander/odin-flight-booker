@@ -1,44 +1,78 @@
 .flight-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: $border-radius-sm;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 1px 2px 5px 0px hsla(0, 0%, 0%, 0.15);
+  opacity: 0.9;
+
+  p {
+    margin: 0;
+  }
+
+  input[type="radio"] {
+    border: 0px;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 1rem;
+  }
+
+  .flight-card-stop {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex: 1 1 0px;
     align-items: center;
-    border-radius: $border-radius-sm;
-    border-width: 1px;
-    border-style: solid;
-    box-shadow: 1px 2px 5px 0px hsla(0, 0%, 0%, 0.15);
-    opacity: 0.9;
 
-    p {
-        margin: 0;
+    .flight-card-airport {
+      margin: 0;
+      padding: 0;
     }
 
-    input[type=radio] {
-        border: 0px;
-        width: 1.2rem;
-        height: 1.2rem;
-        margin: 1rem;
+    img {
+      height: 1rem;
+      margin: 0 0.6rem 0 0;
+    }
+  }
+
+  .flight-card-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .flight-card-arrow {
+      font-size: 1.6rem;
+    }
+  }
+
+  .flight-card-datetime {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .flight-card-date,
+    .flight-card-time {
+      margin: 0;
+      padding: 0;
+
+      $side: 0.8rem;
+      &:before {
+        background-size: $side $side;
+        display: inline-block;
+        width: $side;
+        height: $side;
+        content: "";
+      }
+    }
+    .flight-card-date:before {
+      margin: 0 0.6rem 0 0;
+      background-image: url("calendar.png");
     }
 
-    .flight-card-stop {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 0px;
-        align-items: center;
-    
-        .flight-card-airport {
-            margin: 0;
-            padding: 0;
-        }
+    .flight-card-time:before {
+      margin: 0 0.3rem 0 0;
+      background-image: url("clock.png");
     }
-    
-    .flight-card-mid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    
-        .flight-card-arrow {
-            font-size: 1.6rem;
-        }
-    }
+  }
 }
-
