@@ -2,7 +2,7 @@
   <h2 class="flight-card-airport"><%= flight.departure_airport.code %></h2>
   <div class="flight-card-datetime">
     <p class="flight-card-date"><%= Flight.display_date(flight.depart_datetime) %></p>
-    <p class="flight-card-time"><%= Flight.display_time(flight.arrive_datetime) %></p>
+    <p class="flight-card-time"><%= Flight.display_time(flight.depart_datetime) %></p>
   </div>
 </div>
 <div class="flight-card-mid">
@@ -12,7 +12,7 @@
 <div class="flight-card-stop" id="flight-card-arrival" aria-label="arrival">
   <h2 class="flight-card-airport"><%= flight.arrival_airport.code %></h2>
   <div class="flight-card-datetime">
-    <p class="flight-card-date"><%= Flight.display_date(flight.depart_datetime) %></p>
+    <p class="flight-card-date"><%= Flight.display_date(flight.arrive_datetime) %></p>
     <p class="flight-card-time"><%= Flight.display_time(flight.arrive_datetime) %></p>
   </div>
 </div>
