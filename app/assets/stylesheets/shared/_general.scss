@@ -50,29 +50,6 @@ h2 {
   font-weight: 600;
 }
 
-.logo {
-  animation: bounce 1s infinite alternate;
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-5px);
-  }
-}
-
-.logo-link {
-  text-decoration: none;
-  color: inherit;
-
-  &:visited {
-    text-decoration: inherit;
-    color: inherit;
-  }
-}
-
 .std-button {
   padding: 0.4rem;
   border-radius: $border-radius-sm;
@@ -110,6 +87,7 @@ h2 {
 
 .horizontal-fields {
   display: flex;
+  flex-wrap: wrap;
 
   label,
   .label {
