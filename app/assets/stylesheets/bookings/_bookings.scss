@@ -1,34 +1,47 @@
 .new-booking,
 .show-booking {
-    margin: 1rem;
+  margin: 1rem;
 
-    .flight-card {
-        border: 1px solid $secondary-color-med;
-        background-color: $secondary-color-light;
-        margin: 1rem 0;
+  .flight-card {
+    border: 1px solid $secondary-color-med;
+    background-color: $secondary-color-light;
+    margin: 1rem 0;
+  }
+
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+
+    .std-button {
+      background-color: $main-color-med;
+      padding: 0.4rem 1rem;
+      font-size: 1.2rem;
+      align-self: end;
+
+      &:hover {
+        background-color: $main-color-dark;
+      }
     }
+  }
 
-    .booking-form {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-
-        .std-button {
-            background-color: $main-color-med;
-            padding: 0.4rem 1rem;
-            font-size: 1.2rem;
-            align-self: end;
-    
-            &:hover {
-                background-color: $main-color-dark;
-            }
-        }
-    }
+  .booking-cards {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
     .booking-card {
-        border: 1px solid $main-color-med;
-        background-color: $main-color-light;
-        padding: 1rem;
+      border: 1px solid $main-color-med;
+      background-color: $main-color-light;
+      padding: 1rem;
+
+      .label,
+      .input-value {
+        width: 5rem;
+      }
     }
+  }
 }

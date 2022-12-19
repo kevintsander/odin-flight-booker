@@ -1,11 +1,13 @@
-<% booking.passengers.each_with_index do |passenger, index| %>
-  <div class="content-card booking-card">
-    <h2><%= "Passenger #{index + 1}" %></h2>
-    <div class="horizontal-fields">
-      <p class="label">Name</p>
-      <p class="input-value"><%= passenger.name %></p>
-      <p class="label">Email</p>
-      <p class="input-value"><%= passenger.email %></p>
+<div class="booking-cards">
+    <% booking.passengers.each_with_index do |passenger, index| %>
+    <div class="content-card booking-card">
+        <h2><%= "Passenger #{index + 1}" %></h2>
+        <div class="horizontal-fields">
+        <p class="label">Name</p>
+        <p class="input-value"><%= passenger.name %></p>
+        <p class="label">Email</p>
+        <p class="input-value"><%= passenger.email %></p>
+        </div>
     </div>
-  </div>
-<% end %>
+    <% end %>
+</div>
