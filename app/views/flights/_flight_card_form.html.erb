@@ -1,4 +1,4 @@
-<%= form.label "flight_id_#{flight.id}", class: "flight-card content-card" do %>
-  <%= form.radio_button :flight_id, flight.id, required: true %>
+<%= form.label "flight_id_#{flight.id}", class: "flight-card content-card", data: { toggle_radio_target: 'toggle' } do %>
+  <%= form.radio_button :flight_id, flight.id, required: true, data: { action: 'change->toggle-radio#change' } %>
   <%= render 'flight_card_contents', flight: flight %>
 <% end %>
