@@ -5,7 +5,7 @@
 <% if @flights.any? %>
   <div class="flights-container">
     <%= form_with url: new_booking_path, method: 'get', class: "flight-cards" do |form| %>
-      <%= render partial: 'flight_card', collection: @flights, as: :flight, locals: {form: form} %>
+      <%= render partial: 'flight_card_form', collection: @flights, as: :flight, locals: {form: form} %>
       <% if params[:search][:number_of_passengers] %>
         <%= form.hidden_field :number_of_passengers, value: params[:search][:number_of_passengers] %>
       <% end %>
