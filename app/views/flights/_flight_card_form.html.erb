@@ -1,6 +1,4 @@
-<%= form.label "flight_id_#{flight.id}" do %>
-  <div class="flight-card content-card">
-    <%= form.radio_button :flight_id, flight.id, required: true %>
-    <%= render 'flight_card_contents', flight: flight %>
-  </div>
+<%= form.label "flight_id_#{flight.id}", class: "flight-card content-card" do %>
+  <%= form.radio_button :flight_id, flight.id, required: true %>
+  <%= render 'flight_card_contents', flight: flight %>
 <% end %>

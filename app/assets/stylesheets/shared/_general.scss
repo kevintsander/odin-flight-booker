@@ -9,6 +9,8 @@
 }
 
 body {
+    color: $dark-font-color;
+
     margin: 0;
     width: 100vw;
     min-height: 100vh;
@@ -36,6 +38,8 @@ body {
         }
 }
 
+
+
 h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -44,6 +48,16 @@ h1 {
 h2 {
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+
+    &:visited {
+        text-decoration: inherit;
+        color: inherit;
+    }
 }
 
 .std-button {
